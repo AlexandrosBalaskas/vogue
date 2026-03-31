@@ -10,7 +10,11 @@ const inter = Inter({
   variable: "--font-sans",
 });
 
-export default function RootLayout({ children }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
       <body className="font-sans bg-white text-black">{children}</body>
