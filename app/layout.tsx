@@ -1,23 +1,19 @@
-import { Playfair_Display, Inter } from "next/font/google";
+import type { Metadata } from "next";
+import "./globals.css";
 
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  variable: "--font-serif",
-});
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-sans",
-});
+export const metadata: Metadata = {
+  title: "Vogue Article Clone",
+  description: "Mobile-first Vogue-style article clone",
+};
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
-    <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
-      <body className="font-sans bg-white text-black">{children}</body>
+    <html lang="en">
+      <body>{children}</body>
     </html>
   );
 }
