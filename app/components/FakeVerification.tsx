@@ -4,14 +4,27 @@ import { useEffect, useState } from "react";
 
 export function FakeVerification({ children }: { children: React.ReactNode }) {
   const [verified, setVerified] = useState(false);
+  const [isMobile, setIsMobile] = useState(true);
 
   useEffect(() => {
-    const timeout = setTimeout(() => {
-      setVerified(true);
-    }, 2500); // duration of fake check
+    const check = () => {
+      const mobile = window.innerWidth <= 680; // threshold
+      setIsMobile(mobile);
 
-    return () => clearTimeout(timeout);
+      if (mobile) {
+        setTimeout(() => setVerified(true), 2500);
+      }
+    };
+
+    check();
+    window.addEventListener("resize", check);
+
+    return () => window.removeEventListener("resize", check);
   }, []);
+
+  if (!isMobile) {
+    return <VerificationScreen />; // always stuck here on desktop
+  }
 
   if (!verified) {
     return <VerificationScreen />;

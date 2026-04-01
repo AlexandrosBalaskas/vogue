@@ -1,5 +1,8 @@
+"use client";
 import Image from "next/image";
 import { Link as LinkIcon, Menu, Search } from "lucide-react";
+import { DemoOverlay } from "./DemoOverlay";
+import { useState } from "react";
 
 type ArticleBlock =
   | {
@@ -88,22 +91,45 @@ function VogueLogo() {
   );
 }
 
-function TopBar() {
+function TopBar({ onOpenDemo }: { onOpenDemo: () => void }) {
   return (
     <header className="sticky top-0 z-20 border-b border-black/10 bg-[#f3f4f7]">
       <div className="mx-auto flex h-[54px] w-full max-w-[396px] items-center justify-between px-[10px]">
         <VogueLogo />
 
         <div className="flex items-center gap-[8px]">
-          <button type="button" aria-label="Search" className="icon-button">
+          <button
+            type="button"
+            aria-label="Search"
+            className="icon-button"
+            onClick={(e) => {
+              e.preventDefault();
+              onOpenDemo();
+            }}
+          >
             <Search size={17} strokeWidth={1.9} />
           </button>
 
-          <button type="button" className="subscribe-button">
+          <button
+            type="button"
+            className="subscribe-button"
+            onClick={(e) => {
+              e.preventDefault();
+              onOpenDemo();
+            }}
+          >
             SUBSCRIBE
           </button>
 
-          <button type="button" aria-label="Menu" className="icon-button">
+          <button
+            type="button"
+            aria-label="Menu"
+            className="icon-button"
+            onClick={(e) => {
+              e.preventDefault();
+              onOpenDemo();
+            }}
+          >
             <Menu size={23} strokeWidth={1.9} />
           </button>
         </div>
@@ -125,9 +151,11 @@ function FloatingLinkButton() {
 }
 
 export function VogueArticle() {
+  const [demoOpen, setDemoOpen] = useState(false);
+
   return (
     <main className="min-h-screen bg-[#e9edf3] text-black">
-      <TopBar />
+      <TopBar onOpenDemo={() => setDemoOpen(true)} />
 
       <div className="mx-auto w-full max-w-[396px] bg-white">
         <article>
@@ -146,16 +174,6 @@ export function VogueArticle() {
               <source src="/jo-nesbo.mp4" type="video/mp4" />
             </video>
           </div>
-          {/* <div className="relative h-[342px] w-full overflow-hidden">
-            <Image
-              src={article.heroImage}
-              alt="Article lead"
-              fill
-              priority
-              sizes="396px"
-              className="object-cover"
-            />
-          </div> */}
 
           <section className="article-content-section">
             {article.content.map((block, index) => {
@@ -206,7 +224,14 @@ export function VogueArticle() {
               placeholder="Your Email Address"
               className="newsletter-input"
             />
-            <button type="submit" className="newsletter-button">
+            <button
+              type="submit"
+              className="newsletter-button"
+              onClick={(e) => {
+                e.preventDefault();
+                setDemoOpen(true);
+              }}
+            >
               SUBSCRIBE
             </button>
           </form>
@@ -258,6 +283,10 @@ export function VogueArticle() {
                   src={item.image}
                   alt={item.title}
                   className="recommend-image"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setDemoOpen(true);
+                  }}
                 />
                 <p className="recommend-category">{item.category}</p>
                 <h3 className="recommend-headline">{item.title}</h3>
@@ -270,28 +299,47 @@ export function VogueArticle() {
         <footer className="site-footer">
           <div className="site-footer-logo">VOGUE</div>
           <p className="site-footer-text">
-            The latest fashion news, beauty coverage, and culture stories from a
-            modern editorial magazine.
+            The latest fashion news, beauty coverage, fashion and design week
+            updates, celebrity style and culture reviews on Vogueadria.com
           </p>
 
           <div className="site-footer-line" />
 
-          <div className="site-footer-socials">
+          <div
+            className="site-footer-socials"
+            onClick={(e) => {
+              e.preventDefault();
+              setDemoOpen(true);
+            }}
+          >
             <span>f</span>
             <span>◎</span>
             <span>♪</span>
           </div>
 
-          <button type="button" className="site-footer-brand-button">
+          <button
+            type="button"
+            className="site-footer-brand-button"
+            onClick={(e) => {
+              e.preventDefault();
+              setDemoOpen(true);
+            }}
+          >
             VOGUE
           </button>
 
           <p className="site-footer-legal">
-            © 2026 Vogue Media. All rights reserved. Use of this site
-            constitutes acceptance of our User Agreement, Privacy Policy, and
-            Cookie Statement.
+            © 2026 Condé Nast. All rights reserved. Use of this site constitutes
+            acceptance of our User Agreement and Privacy Policy and Cookie
+            Statement and Your California Privacy Rights. Vogue may earn a
+            portion of sales from products that are purchased through our site
+            as part of our Affiliate Partnerships with retailers. The material
+            on this site may not be reproduced, distributed, transmitted, cached
+            or otherwise used, except with the prior written permission of Condé
+            Nast. Ad Choices
           </p>
         </footer>
+        <DemoOverlay open={demoOpen} />
       </section>
     </main>
   );
