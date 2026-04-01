@@ -544,12 +544,10 @@ img {
 .article-body {
   margin: 0 0 26px;
   color: #000;
-  font-family:
-    "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, Georgia,
-    serif;
-  font-size: 18px;
-  line-height: 1.62;
-  letter-spacing: -0.005em;
+  font-family: adobe-garamond-pro, Helvetica, Arial, "Open Sans", sans-serif;
+  font-size: 17px;
+  line-height: 1.55;
+  letter-spacing: -0em;
 }
 
 .article-body p {

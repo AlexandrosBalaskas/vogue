@@ -93,8 +93,8 @@ function VogueLogo() {
 
 function TopBar({ onOpenDemo }: { onOpenDemo: () => void }) {
   return (
-    <header className="sticky top-0 z-20 border-b border-black/10 bg-[#f3f4f7]">
-      <div className="mx-auto flex h-[54px] w-full max-w-[396px] items-center justify-between px-[10px]">
+    <header className="sticky top-0 z-20 border-b border-black/10 bg-[#ffffff]">
+      <div className="mx-auto flex h-[54px] w-full items-center justify-between px-[10px]">
         <VogueLogo />
 
         <div className="flex items-center gap-[8px]">
@@ -157,7 +157,7 @@ export function VogueArticle() {
     <main className="min-h-screen bg-[#e9edf3] text-black">
       <TopBar onOpenDemo={() => setDemoOpen(true)} />
 
-      <div className="mx-auto w-full max-w-[396px] bg-white">
+      <div className="mx-auto w-full bg-white">
         <article>
           <section className="border-b border-black/10 px-[18px] pt-[28px] text-center">
             <p className="article-kicker">FILM & TV</p>
@@ -180,7 +180,11 @@ export function VogueArticle() {
               if (block.type === "paragraph") {
                 return (
                   <div key={index} className="article-body">
-                    <p>{block.text}</p>
+                    {block.text.split("\n\n").map((para, i) => (
+                      <p style={{ marginBottom: "1rem" }} key={i}>
+                        {para}
+                      </p>
+                    ))}
                   </div>
                 );
               }
