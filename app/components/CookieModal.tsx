@@ -1,14 +1,12 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export function CookieModal() {
-  const [open, setOpen] = useState(false);
-
-  useEffect(() => {
-    const seen = window.localStorage.getItem("cookie-consent-choice");
-    if (!seen) setOpen(true);
-  }, []);
+  const [open, setOpen] = useState(() => {
+    if (typeof window === "undefined") return false;
+    return !window.localStorage.getItem("cookie-consent-choice");
+  });
 
   const closeWithChoice = (choice: "allow" | "customize") => {
     window.localStorage.setItem("cookie-consent-choice", choice);

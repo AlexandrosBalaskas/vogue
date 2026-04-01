@@ -100,27 +100,6 @@ img {
   letter-spacing: 0.01em;
 }
 
-.article-body {
-  color: #000;
-  font-family:
-    "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, Georgia,
-    serif;
-  font-size: 21px;
-  line-height: 1.58;
-  letter-spacing: -0.01em;
-}
-
-.article-body p {
-  margin: 0 0 24px;
-}
-
-.article-caption {
-  padding: 7px 14px 0;
-  color: rgba(0, 0, 0, 0.8);
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 12px;
-}
-
 .floating-link-button {
   position: fixed;
   left: 14px;
@@ -352,4 +331,249 @@ img {
   font-size: 22px;
   line-height: 0;
   vertical-align: middle;
+}
+.article-extras {
+  background: #f3f3f1;
+}
+
+.article-video {
+  padding: 18px 16px 22px;
+}
+
+.video-link {
+  display: block;
+  text-decoration: none;
+}
+
+.video-thumb {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.newsletter-box {
+  padding: 28px 20px 34px;
+  background: #f5f5f3;
+  text-align: center;
+}
+
+.newsletter-title {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: -0.04em;
+}
+
+.newsletter-subtitle {
+  margin: 18px auto 0;
+  max-width: 320px;
+  color: #666;
+  font-size: 14px;
+  line-height: 1.7;
+  letter-spacing: 0.12em;
+}
+
+.newsletter-form {
+  display: grid;
+  grid-template-columns: 1fr 114px;
+  gap: 0;
+  margin-top: 24px;
+}
+
+.newsletter-input {
+  height: 50px;
+  border: 0;
+  padding: 0 16px;
+  background: #fff;
+  color: #111;
+  font-size: 14px;
+}
+
+.newsletter-button {
+  height: 50px;
+  border: 0;
+  background: #000;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.newsletter-legal {
+  margin: 18px auto 0;
+  max-width: 330px;
+  color: #555;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.recommends-section {
+  padding: 18px 20px 28px;
+  background: #f7f7f5;
+}
+
+.recommends-divider {
+  height: 1px;
+  background: #d6d6d2;
+}
+
+.recommends-title {
+  margin: 16px 0;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: -0.03em;
+}
+
+.recommends-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px 8px;
+  margin-top: 22px;
+}
+
+.recommend-card {
+  display: block;
+}
+
+.recommend-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1.22;
+  object-fit: cover;
+}
+
+.recommend-category {
+  margin: 12px 0 0;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.recommend-headline {
+  margin: 10px 0 0;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.04em;
+}
+
+.recommend-author {
+  margin: 14px 0 0;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.site-footer {
+  padding: 46px 18px 34px;
+  background: #000;
+  color: #fff;
+  text-align: center;
+}
+
+.site-footer-logo {
+  font-family: "Bodoni 72", "Didot", "Times New Roman", serif;
+  font-size: 56px;
+  line-height: 1;
+  letter-spacing: -0.08em;
+}
+
+.site-footer-text {
+  margin: 34px auto 0;
+  max-width: 300px;
+  font-size: 14px;
+  line-height: 1.1;
+  font-weight: 700;
+}
+
+.site-footer-line {
+  height: 1px;
+  margin: 52px 0 24px;
+  background: rgba(255, 255, 255, 0.75);
+}
+
+.site-footer-socials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.site-footer-brand-button {
+  margin-top: 48px;
+  width: 216px;
+  height: 40px;
+  border: 1px solid #fff;
+  color: #fff;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.site-footer-legal {
+  margin: 48px auto 0;
+  max-width: 320px;
+  font-size: 12px;
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+.hero-video-wrapper {
+  position: relative;
+  width: 100%;
+  height: 340px; /* match your previous image height */
+  overflow: hidden;
+}
+
+.hero-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.article-content-section {
+  padding: 28px 12px 64px;
+}
+
+.article-body {
+  margin: 0 0 26px;
+  color: #000;
+  font-family:
+    "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, Georgia,
+    serif;
+  font-size: 18px;
+  line-height: 1.62;
+  letter-spacing: -0.005em;
+}
+
+.article-body p {
+  margin: 0;
+}
+
+.article-figure {
+  margin: 0 0 28px;
+}
+
+.article-inline-image-wrap {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.article-inline-image {
+  object-fit: cover;
+}
+
+.article-caption {
+  padding: 3px 0 0;
+  color: #000;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  line-height: 1.2;
 }
